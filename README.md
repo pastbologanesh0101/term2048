@@ -9,6 +9,9 @@ The **2048** sliding-tile game in your terminal — zero runtime dependencies, 2
 colour, and a built-in **expectimax AI** that you can hand the controls to at any
 time.
 
+**▶ Play in the browser: https://term2048.vercel.app** — same `game.ts` + `ai.ts`,
+a DOM front-end (`web/`).
+
 ![term2048 mid-game, AI driving, a 2048 tile in the corner](docs/screenshot.svg)
 
 ## Run it
@@ -109,6 +112,8 @@ src/
 test/
   game.test.ts   slide/merge edge cases, spawn counting, status, determinism
   ai.test.ts     heuristic ordering, forced moves, a seeded game reaching 512+
+web/
+  index.html + main.ts + style.css   browser front-end (Vite), imports src/ as-is
 ```
 
 ## Development
