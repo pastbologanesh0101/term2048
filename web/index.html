@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>term2048</title>
+    <meta
+      name="description"
+      content="2048 in the browser, running the same pure game engine and expectimax AI as the terminal version."
+    />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23edc22e'/><text x='8' y='12' font-size='9' font-family='monospace' font-weight='700' text-anchor='middle' fill='%23fff'>2</text></svg>" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__head">
+        <div>
+          <h1>2048</h1>
+          <p class="app__sub">
+            same engine as
+            <a href="https://github.com/pastbologanesh0101/term2048">term2048</a>, in the browser
+          </p>
+        </div>
+        <div class="scores">
+          <div class="score"><span>score</span><b id="score">0</b></div>
+          <div class="score"><span>best</span><b id="best">0</b></div>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <button id="new" type="button">New game</button>
+        <button id="undo" type="button">Undo</button>
+        <button id="ai" type="button" aria-pressed="false">Let AI play</button>
+      </div>
+
+      <div id="board" class="board" tabindex="0" aria-label="2048 board">
+        <div id="cells" class="board__cells"></div>
+        <div id="tiles" class="board__tiles"></div>
+        <div id="overlay" class="overlay" hidden>
+          <p id="overlayText"></p>
+          <button id="overlayBtn" type="button"></button>
+        </div>
+      </div>
+
+      <p class="hint">
+        arrow keys / <kbd>WASD</kbd> to move · swipe on touch · <kbd>U</kbd> undo ·
+        <kbd>A</kbd> toggle AI
+      </p>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

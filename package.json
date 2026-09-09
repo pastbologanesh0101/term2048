@@ -34,6 +34,9 @@
     "typecheck": "tsc --noEmit",
     "bench": "tsx src/bench.ts",
     "screenshot": "node --import tsx scripts/screenshot.mjs",
+    "dev:web": "vite",
+    "build:web": "vite build",
+    "preview:web": "vite preview",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
@@ -41,6 +44,7 @@
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
+    "vite": "^6.0.7",
     "vitest": "^5.0.0"
   }
 }
