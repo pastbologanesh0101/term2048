@@ -12,7 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [18, 20, 22]
+        # vitest 5's runner needs node:util.styleText (Node 20.12+).
+        node: [20, 22, 24]
     name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v4
@@ -29,3 +30,18 @@ jobs:
         run: npm run build
       - name: AI smoke run
         run: node dist/cli.js --headless 3
+
+  node18-compat:
+    runs-on: ubuntu-latest
+    name: Node 18 (build + run)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+      - run: npm ci
+      - name: Build on Node 18
+        run: npm run build
+      - name: Run the built game on Node 18
+        run: node dist/cli.js --headless 2
