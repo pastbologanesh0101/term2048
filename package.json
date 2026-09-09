@@ -1,0 +1,46 @@
+{
+  "name": "term2048",
+  "version": "1.0.0",
+  "description": "The 2048 sliding-tile game in your terminal, with a built-in expectimax AI.",
+  "keywords": [
+    "2048",
+    "game",
+    "terminal",
+    "tui",
+    "cli",
+    "puzzle",
+    "expectimax",
+    "ai"
+  ],
+  "license": "MIT",
+  "author": "pastbologanesh0101",
+  "type": "module",
+  "bin": {
+    "term2048": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "bench": "tsx src/bench.ts",
+    "screenshot": "node --import tsx scripts/screenshot.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^5.0.0"
+  }
+}
